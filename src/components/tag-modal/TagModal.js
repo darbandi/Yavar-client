@@ -18,10 +18,18 @@ const TagModal = () => {
         {visible && (
           <div className="modal">
             <div className="modal-content">
-              <span onClick={() => setVisible(false)} className="close">
-                &times;
-              </span>
-              <p>Some text in the Modal..</p>
+              <div className="modal-header">
+                {/* <span onClick={() => setVisible(false)} className="close">
+                  &times;
+                </span> */}
+                <span>درج تگ بر روی محتوا</span>
+                <i
+                  className="icon icon-cancel"
+                  onClick={() => setVisible(false)}
+                ></i>
+              </div>
+              <div className="modal-body">sdfsdfdsf</div>
+              <div className="modal-footer">fdfdf</div>
             </div>
           </div>
         )}
