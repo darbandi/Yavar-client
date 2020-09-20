@@ -1,0 +1,19 @@
+.verse-actions {
+  align-items: center;
+  height: 26px;
+  background-color: #707070;
+  border-radius: 3px;
+  margin-top: 30px;
+  display: flex;
+  // padding: 10px;
+  .right-section {
+    margin-right: 16px;
+    img {
+      margin-left: 45px;
+    }
+  }
+  .left-section {
+    width: 128px;
+    text-align: left;
+  }
+}

@@ -1,0 +1,36 @@
+.tab {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 38px;
+  position: relative;
+  margin-right: 16px;
+  margin-left: 16px;
+  &:after {
+    position: absolute;
+    height: 2px;
+    left: 0;
+    right: 0;
+    bottom: -15px;
+    width: 100%;
+    content: "";
+    background-color: #ebbd77;
+    opacity: 10%;
+  }
+  span {
+    opacity: 50%;
+    position: relative;
+    &.active {
+      opacity: 100%;
+      &:after {
+        position: absolute;
+        height: 2px;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        width: 100%;
+        content: "";
+        background-color: #ebbd77;
+      }
+    }
+  }
+}

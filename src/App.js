@@ -9,10 +9,7 @@ const App = () => {
   return (
     <Provider>
       <BrowserRouter>
-        <div className="App">
-          <header className="App-header"></header>
-          <div className="App-body"></div>
-          <footer className="App-footer"></footer>
+        <div className="app">
           <CustomRouter />
         </div>
       </BrowserRouter>
