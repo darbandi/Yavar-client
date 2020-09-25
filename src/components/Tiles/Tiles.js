@@ -8,21 +8,31 @@ import list from "./../../assets/img/list.svg";
 import Interpretation from "./../../assets/img/Interpretation.svg";
 import virtue from "./../../assets/img/virtue.svg";
 
-const tileItems = [
-  { title: "متن و ترجمه آیات", url: translate, col: "col-12" },
-  { title: "قرائت", url: play, col: "col-6" },
-  { title: "لیست کلمات", url: list, col: "col-6" },
-  { title: "تفسیر", url: Interpretation, col: "col-6" },
-  { title: "فضیلت", url: virtue, col: "col-6" },
-];
 const Tiles = (props) => {
   const { id } = props;
+  const tileItems = [
+    {
+      title: "متن و ترجمه آیات",
+      url: translate,
+      col: "col-12",
+      href: `/verses/${id}`,
+    },
+    { title: "قرائت", url: play, col: "col-6", href:  `/verses/${id}` },
+    { title: "لیست کلمات", url: list, col: "col-6", href:  `/surah-new-words/${id}` },
+    { title: "تفسیر", url: Interpretation, col: "col-6", href:  `/verses/${id}` },
+    { title: "فضیلت", url: virtue, col: "col-6", href:  `/verses/${id}` },
+  ];
   return (
     <Profiler id="Surah" onRender={profilerCallback}>
       <div className="tiles">
         {tileItems?.map((item, index) => {
           return (
-            <Tile id={id} title={item.title} url={item.url} col={item.col} />
+            <Tile
+              title={item.title}
+              url={item.url}
+              col={item.col}
+              href={item.href}
+            />
           );
         })}
       </div>

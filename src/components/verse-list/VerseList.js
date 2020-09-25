@@ -5,13 +5,19 @@ import VerseActions from "../../components/verse-actions/VerseActions";
 
 const VerseList = (props) => {
   const { data } = props;
+  debugger;
   return (
     <Profiler id="Verse" onRender={profilerCallback}>
       <div className="verce-list">
-        {data?.map((lesson, index) => (
+        {data?.map((verse, index) => (
           <div>
-            <VerseActions />
-            <VerseItem key={index} data={lesson} />
+            <VerseActions
+              data={verse.tags}
+              verseId={verse.verse_id}
+              surahId={verse.surah_id}
+              newWords={verse.new_words}
+            />
+            <VerseItem key={index} data={verse} />
           </div>
         ))}
       </div>

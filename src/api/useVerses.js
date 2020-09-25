@@ -24,6 +24,7 @@ const useVerses = (id) => {
            text_arabic
            text_persian
            verse_id
+           surah_id
            new_words
            component
            verse_words_count
@@ -52,7 +53,6 @@ const useVerses = (id) => {
     get("/lessons", params)
       .then((result) => result.data.data.lesson)
       .then((result) => {
-        debugger;
         setData(result.verses);
         const surah = cloneDeep(result);
         delete surah.verses;

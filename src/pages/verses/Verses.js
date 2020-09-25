@@ -15,12 +15,19 @@ const layoutOption = {
 const Verses = (props) => {
   const { id } = props.match.params;
   const [{ surahData, data, loading, error }] = useVerses(id);
-  
+
   return (
     <Layout layoutOption={layoutOption}>
       <Profiler id="Verses" onRender={profilerCallback}>
         <div className="verses">
-          {!isEmpty(surahData) && <SurahDetailsCard data={surahData} />}
+          {!isEmpty(surahData) && (
+            <SurahDetailsCard
+              description={`لیست کلمات سوره ${ff}`}
+              icon={"icon-list"}
+              title={""}
+              data={surahData}
+            />
+          )}
 
           {data && <VerseList data={data} />}
         </div>
