@@ -1,0 +1,23 @@
+.splash-screen {
+  text-align: center;
+  height: 812px;
+    color: #ebbd77;
+  .header-image {
+    background-image: url("./../../assets/img/splash-screen.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 166px;
+    margin-bottom: 266px;
+  }
+  .title {
+    font-size: 27px;
+
+    margin-bottom: 50px;
+  }
+  .description {
+    font-size: 19px;
+    margin-top: 50px;
+    margin-bottom: 122px;
+    opacity: 50%;
+  }
+}

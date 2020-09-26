@@ -1,0 +1,21 @@
+.last-read {
+  background: linear-gradient(45deg, #ebbd77, #56462e);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  .section-2 {
+    margin-right: 14px;
+    flex: 1;
+    .title {
+      font-size: 14px;
+    }
+    .surah-name {
+      font-size: 25px;
+      margin-top:16px;
+      margin-bottom:5px;
+    }
+    .verse-count {
+        opacity: 50%;
+    }
+  }
+}

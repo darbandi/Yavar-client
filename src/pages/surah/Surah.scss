@@ -1,0 +1,14 @@
+.surah {
+  padding: 20px;
+  .text {
+    text-align: right;
+    padding: 24px 0px 20px;
+    .title {
+      font-size: 12px;
+      opacity: 50%;
+    }
+    .description {
+      font-size: 14px;
+    }
+  }
+}

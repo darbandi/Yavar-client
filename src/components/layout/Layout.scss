@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  .layout-header {
+    height: 25px;
+    width: 100%;
+  }
+  .layout-body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .layout-footer {
+    height: 50px;
+    width: 100%;
+  }
+}

@@ -14,7 +14,7 @@ let Page1 = () => {
   const [loading, setLoading] = useState([]);
 
   useEffect(() => {
-    setLoading(true);  
+    setLoading(true);
     setError(null);
     const params = {
       query: `query{
@@ -31,10 +31,10 @@ let Page1 = () => {
         setData(result);
       })
       .catch((error) => {
-          setError(error);
+        setError(error);
       })
       .finally(() => {
-          setLoading(false)
+        setLoading(false);
       });
   }, []);
 
