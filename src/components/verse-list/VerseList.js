@@ -5,7 +5,7 @@ import VerseActions from "../../components/verse-actions/VerseActions";
 
 const VerseList = (props) => {
   const { data } = props;
-  debugger;
+
   return (
     <Profiler id="Verse" onRender={profilerCallback}>
       <div className="verce-list">

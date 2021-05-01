@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { get } from "../API";
+import { get } from "./API";
 
 const useLessons = () => {
   const [loading, setLoading] = useState(false);

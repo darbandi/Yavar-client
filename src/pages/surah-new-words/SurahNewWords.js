@@ -21,7 +21,7 @@ const SurahNewWords = (props) => {
         <div className="surah-new-words">
           {!isEmpty(surahData) && (
             <SurahDetailsCard
-              description={`لیست کلمات سوره ${ff}`}
+              description={`لیست کلمات سوره ${"aa"}`}
               icon={"icon-list"}
               title={""}
               data={surahData}

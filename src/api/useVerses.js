@@ -1,6 +1,6 @@
 import { cloneDeep } from "lodash";
 import { useEffect, useState } from "react";
-import { get } from "../API";
+import { get } from "./API";
 
 const useVerses = (id) => {
   const [loading, setLoading] = useState(false);

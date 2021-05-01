@@ -6,7 +6,7 @@ const NewWordsModal = (props) => {
   const { newWords, verseId, surahId } = props;
   const words = JSON.parse(newWords);
   const [visible, setVisible] = useState(false);
-  debugger;
+
   return (
     <Profiler id="Versec" onRender={profilerCallback}>
       <span className="new-words-modal">

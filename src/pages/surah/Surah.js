@@ -22,7 +22,7 @@ const Surah = () => {
           </div>
           <LastRead />
           <Tab />
-      <SurahList/>
+          <SurahList />
         </div>
       </Profiler>
     </Layout>

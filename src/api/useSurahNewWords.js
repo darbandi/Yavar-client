@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { get } from "../API";
+import { get } from "./API";
 
 const useSurahNewWords = (id) => {
   const [loading, setLoading] = useState(false);

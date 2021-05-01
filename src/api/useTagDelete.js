@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { post } from "../API";
+import { post } from "./API";
 
 const useTagDelete = (data) => {
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ const useTagDelete = (data) => {
       .then((result) => result.data.data.deleteTag)
       .then((result) => {
 
-        debugger
+        
         // data = data.filter((x) => x.id !== result.id);
         data.splice((x) => x.id !== result.id);
       })

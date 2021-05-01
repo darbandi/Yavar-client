@@ -23,7 +23,7 @@ const SurahDetails = (props) => {
         <div className="surah-details">
           {!isEmpty(surahData) && (
             <SurahDetailsCard
-              description={`لیست کلمات سوره ${ff}`}
+              description={`لیست کلمات سوره ${"ff"}`}
               icon={"icon-list"}
               title={""}
               data={surahData}

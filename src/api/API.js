@@ -1,6 +1,6 @@
 import axios from "axios";
 import qs from "qs";
-const path = "http://192.168.1.102:8000";
+const path = "http://localhost:8000";
 
 const get = (address, query, customHeader, cancellation) => {
   if (query) {
@@ -33,6 +33,7 @@ const all = (arrMethodes) => {
 };
 
 const headers = (customHeader) => {
+    debugger
   let headers = {
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +42,7 @@ const headers = (customHeader) => {
 
   // const token = userInfo("token");
   const token =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQ5ZmQ4OWU4MjU2YzIxYzBiMGUzYzAiLCJlbWFpbCI6InJhaGltaUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMiR0VTZ5SHY4emF2YnhiaDRIU2JTOTRPd2pSWXJXTjlwUzgudGltOFpRZzNLWGJyTWdVNjZuLiIsImNyZWF0ZWRfYXQiOiIyMDIwLTA4LTI5VDA3OjAyOjMzLjg2MFoiLCJfX3YiOjAsImlhdCI6MTYwMDQzNTMyNSwiZXhwIjoxNjAwNzk1MzI1fQ.WgmYi8_Kt3FPcmsjpovwdqTC_nI4OCeGJXJP3vDh_F0";
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQ3ZmQxMDE0NWVlYjYzYjAxZmVhZDgiLCJlbWFpbCI6ImRhcmJhbmRpQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEyJEdjSUEwWFNyR3Jwb081eXFOTDMvUy45UkZFUFVYR3V6Mm01Tk5zMjlkTFBvNHRzUDV4MEFlIiwiY3JlYXRlZF9hdCI6IjIwMjAtMDgtMjdUMTg6MzY6MDAuMDA2WiIsIl9fdiI6MCwiaWF0IjoxNjE5ODkzMDM0LCJleHAiOjE2MjAyNTMwMzR9.RhPAt2e84pISxSJTV3cnOSwkYm9Vj63jH2HSWyossQg";
 
   if (token) {
     headers.headers["Authorization"] = token;

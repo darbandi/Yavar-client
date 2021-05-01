@@ -3,7 +3,7 @@ import React, { Profiler } from "react";
 import { profilerCallback } from "./../../Utils";
 
 const VerseItem = (props) => {
-  debugger;
+
   const { text_arabic, text_persian, verse_id } = props.data;
 
   return (

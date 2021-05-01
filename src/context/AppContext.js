@@ -1,11 +1,11 @@
-import React, { useReducer, createContext, useContext } from "react";
+import React, { useReducer, createContext } from "react";
 
 const initialState = {
   title: "Yavar",
 };
 
-const State = createContext(undefined);
-const Dispatch = createContext(undefined);
+const stateContext = createContext(undefined);
+const dispatchContext = createContext(undefined);
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -16,31 +16,15 @@ const reducer = (state, action) => {
   }
 };
 
-const Provider = (props) => {
+const Provider = ({ children }) => {
   const [state, dispatchState] = useReducer(reducer, initialState);
   return (
-    <State.Provider value={state}>
-      <Dispatch.Provider value={dispatchState}>
-        {props.children}
-      </Dispatch.Provider>
-    </State.Provider>
+    <stateContext.Provider value={state}>
+      <dispatchContext.Provider value={dispatchState}>
+        {children}
+      </dispatchContext.Provider>
+    </stateContext.Provider>
   );
 };
 
-const CustomState = () => {
-  const context = useContext(State);
-  if (context === undefined) {
-    throw new Error("CustomState must be used within a Provider");
-  }
-  return context;
-};
-
-const CustomDispatch = () => {
-  const context = useContext(Dispatch);
-  if (context === undefined) {
-    throw new Error("CustomDispatch must be used within a Provider");
-  }
-  return context;
-};
-
-export { Provider, CustomState, CustomDispatch, initialState };
+export { Provider, stateContext, dispatchContext };

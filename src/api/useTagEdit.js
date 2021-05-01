@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { post } from "../API";
+import { post } from "./API";
 
 const useTagEdit = () => {
   const [loading, setLoading] = useState(false);
