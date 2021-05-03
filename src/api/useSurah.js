@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { get } from "./API";
 
-const useLessons = () => {
+const useSurah = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const [data, setData] = useState([]);
 
-  const getData = () => {
-    setLoading(true);
-    setError(null);
-    const params = {
-      query: `query{
+  useEffect(() => {
+    const getData = () => {
+      setLoading(true);
+      setError(null);
+      const params = {
+        query: `query{
                     lessons(page:1, count:114) {
                         id
                         surah_id
@@ -22,24 +23,23 @@ const useLessons = () => {
                         place_of_descent
                     }
                  }`,
+      };
+      get("/lessons", params)
+        .then((result) => result.data.data.lessons)
+        .then((result) => {
+          setData(result);
+        })
+        .catch((err) => {
+          setError(err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     };
-    get("/lessons", params)
-      .then((result) => result.data.data.lessons)
-      .then((result) => {
-        setData(result);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
 
-  useEffect(() => {
     getData();
   }, []);
 
-  return { loading, data, error , getData};
+  return { loading, data, error };
 };
-export default useLessons;
+export default useSurah;
