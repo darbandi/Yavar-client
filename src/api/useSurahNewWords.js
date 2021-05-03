@@ -20,7 +20,7 @@ const useSurahNewWords = (id) => {
      }`,
       };
       get("/lessons", params)
-        .then((result) => result.data.data.lessons)
+        .then((result) => result.data.data.lesson.verses)
         .then((result) => {
           setData(result);
         })
@@ -31,7 +31,6 @@ const useSurahNewWords = (id) => {
           setLoading(false);
         });
     };
-
     getData();
   }, []);
 

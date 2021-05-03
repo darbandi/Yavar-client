@@ -7,11 +7,13 @@ const useVerses = (id) => {
   const [error, setError] = useState();
   const [data, setData] = useState([]);
   const [surahData, setSurahData] = useState({});
-  const getData = () => {
-    setLoading(true);
-    setError(null);
-    const params = {
-      query: `query{
+
+  useEffect(() => {
+    const getData = () => {
+      setLoading(true);
+      setError(null);
+      const params = {
+        query: `query{
         lesson(id:"${id}"){
          id
          surah_id
@@ -49,28 +51,26 @@ const useVerses = (id) => {
          }
        }
      }`,
+      };
+      get("/lessons", params)
+        .then((result) => result.data.data.lesson)
+        .then((result) => {
+          setData(result.verses);
+          const surah = cloneDeep(result);
+          delete surah.verses;
+          setSurahData(surah);
+        })
+        .catch((error) => {
+          setError(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     };
-    get("/lessons", params)
-      .then((result) => result.data.data.lesson)
-      .then((result) => {
-        setData(result.verses);
-        const surah = cloneDeep(result);
-        delete surah.verses;
-        setSurahData(surah);
-        
-      })
-      .catch((error) => {
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
 
-  useEffect(() => {
     getData();
   }, []);
 
-  return [{ surahData, loading, data, error }, getData];
+  return { surahData, loading, data, error };
 };
 export default useVerses;

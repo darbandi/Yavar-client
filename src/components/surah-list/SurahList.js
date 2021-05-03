@@ -2,7 +2,7 @@ import React from "react";
 import useSurah from "../../api/useSurah";
 import Error from "../error/Error";
 import Loading from "../loading/Loading";
-import SurahItem from "../surah-item/SurahItem";
+import SurahItem from "./surah-item/SurahItem";
 import "./SurahList.scss";
 
 const SurahList = () => {

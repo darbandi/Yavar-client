@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./NewWordsModal.scss";
 
-import list from "./../../assets/img/verse-actions/list.svg";
+import list from "./../../../../../assets/img/verse-actions/list.svg";
+import VerseNewWords from "../../../new-words/VerseNewWords";
 
 const NewWordsModal = (props) => {
   const { newWords, verseId, surahId } = props;
-  const words = JSON.parse(newWords);
   const [visible, setVisible] = useState(false);
 
   return (
@@ -24,20 +24,11 @@ const NewWordsModal = (props) => {
               ></i>
             </div>
             <div className="modal-body">
-              {words?.map((word, index) => (
-                <div key={"word_" + index} className="modal-body__item">
-                  <div className="modal-body__arabic">
-                    {index + 1} : {Object.keys(word)[0]}
-                  </div>
-                  <div className="modal-body__persian">{Object.values(word)[0]}</div>
-                </div>
-              ))}
+              <VerseNewWords data={[{ new_words: newWords }]} />
             </div>
           </div>
         </div>
       )}
-
-      {/* <div visible={visible} className="modal"></div> */}
     </span>
   );
 };

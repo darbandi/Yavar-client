@@ -1,6 +1,6 @@
 import "./Surah.scss";
 import React from "react";
-import LastRead from "../../components/last-read/LastRead";
+import LastReadCard from "../../components/cards/last-read/LastReadCard";
 import Tab from "../../components/tab/Tab";
 import SurahList from "../../components/surah-list/SurahList";
 
@@ -12,7 +12,7 @@ const Surah = () => {
           <div className="surah__title">همیشه با قرآن زندگی کنیم</div>
           <b className="surah__description">نرم افزار یادگیری و ترجمه قرآن کریم</b>
         </div>
-        <LastRead />
+        <LastReadCard />
         <Tab />
         <SurahList />
       </div>

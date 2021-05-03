@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import useTagAdd from "../../api/useTagAdd";
-import useTagDelete from "../../api/useTagDelete";
-import useTagEdit from "../../api/useTagEdit";
-import bookmark from "./../../assets/img/verse-actions/bookmark.svg";
+import useTagAdd from "../../../../../api/useTagAdd";
+import useTagDelete from "../../../../../api/useTagDelete";
+import useTagEdit from "../../../../../api/useTagEdit";
+import bookmark from "./../../../../../assets/img/verse-actions/bookmark.svg";
 import "./TagModal.scss";
 
 const TagModal = (props) => {

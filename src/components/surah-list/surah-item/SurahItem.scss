@@ -1,4 +1,4 @@
-@import "./../../assets/css/global";
+@import "./../../../assets/css/global";
 
 .surah-item {
   display: flex;
@@ -19,7 +19,7 @@
     flex: 1;
   }
   &__left {
-    background-image: url("./../../assets/img/star-icon.svg");
+    background-image: url("./../../../assets/img/star-icon.svg");
     background-repeat: no-repeat;
     background-position: left;
     width: 37px;
@@ -45,7 +45,7 @@
       margin-right: 20px;
   }
   &--read {
-    background-image: url("./../../assets/img/star-fill.svg");
+    background-image: url("./../../../assets/img/star-fill.svg");
     color: #56462e;
   }
 }

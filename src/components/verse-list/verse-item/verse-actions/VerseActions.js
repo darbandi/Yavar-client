@@ -1,6 +1,6 @@
 import React from "react";
-import NewWordsModal from "../../../new-words-modal/NewWordsModal";
-import TagModal from "../../../tag-modal/TagModal";
+import NewWordsModal from "./new-words-modal/NewWordsModal";
+import TagModal from "./tag-modal/TagModal";
 import "./VerseActions.scss";
 import play from "./../../../../assets/img/verse-actions/play.svg";
 import favorite from "./../../../../assets/img/verse-actions/favorite.svg";

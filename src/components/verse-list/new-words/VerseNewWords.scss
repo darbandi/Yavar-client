@@ -1,0 +1,25 @@
+.verse-new-words {
+  &__item {
+    border-bottom: 1px solid rgba(255, 234, 201, 0.2);
+    padding: 10px 0;
+    padding-top: 0;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__number {
+    font-family: "iransans";
+    // font-size: 30px;
+    opacity: 0.2;
+    margin-left: 10px;
+  }
+  &__arabic {
+    font-family: arab;
+    font-size: 30px;
+  }
+  &__persian {
+    // font-size: 14px;
+    opacity: 0.7;
+    text-align: left;
+  }
+}

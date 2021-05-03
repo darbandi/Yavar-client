@@ -1,10 +1,10 @@
 import "./SurahDetailsCard.scss";
 import React from "react";
-import quran from "./../../assets/img/ghoran.svg";
+import quran from "./../../../assets/img/ghoran.svg";
+import list from "./../../../assets/img/card/list.svg";
 
-const SurahDetailsCard = (props) => {
-  const { data } = props;
-  const { surah_name, verse_count, place_of_descent } = data || {};
+const SurahDetailsCard = ({ data = {}, type = "quran" }) => {
+  const { surah_name, verse_count, place_of_descent } = data;
   return (
     <div className="details-card">
       <div className="details-card__info">
@@ -14,9 +14,8 @@ const SurahDetailsCard = (props) => {
           <span className="details-card__description">{verse_count} آیه</span>
         </div>
       </div>
-
-      <div>
-        <img src={quran} alt="logo" />
+      <div className="details-card__logo">
+        <img className="details-card__image" src={type === "list" ? list : quran} alt="logo" />
       </div>
     </div>
   );

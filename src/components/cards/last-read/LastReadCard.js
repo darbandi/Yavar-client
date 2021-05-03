@@ -1,13 +1,13 @@
-import "./LastRead.scss";
+import "./LastReadCard.scss";
 import React from "react";
 
-const LastRead = () => {
+const LastReadCard = () => {
   return (
     <div className="last-read">
       <div className="last-read__title">
         <img
           className="last-read__icon"
-          src={require("./../../assets/img/last-read.svg")}
+          src={require("./../../../assets/img/last-read.svg")}
           alt="logo"
         />
         <span>آخرین آیه قرائت شده</span>
@@ -19,11 +19,11 @@ const LastRead = () => {
         </div>
 
         <div className="last-read__verse__logo">
-          <img src={require("./../../assets/img/quran.svg")} alt="logo" />
+          <img src={require("./../../../assets/img/quran.svg")} alt="logo" />
         </div>
       </div>
     </div>
   );
 };
 
-export default LastRead;
+export default LastReadCard;

@@ -5,6 +5,7 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 10px;
+  height: 85px;
 
   &__description {
     margin-right: 10px;
@@ -12,12 +13,21 @@
 
   &__title {
     font-family: arab;
-    font-size: 30px;
-    margin-top: 10px;
+    font-size: 40px;
+    margin-top: -15px;
   }
 
   &__info {
     margin-right: 14px;
     flex: 1;
+  }
+  &__logo {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  &__image {
+    height: 80%;
   }
 }

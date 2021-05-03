@@ -7,7 +7,7 @@ const VerseList = (props) => {
   return (
     <div className="verce-list">
       {data?.map((verse, index) => (
-        <div key={"verce_" + index}>
+        <div key={"verse_" + index}>
           <VerseActions
             data={verse.tags}
             verseId={verse.verse_id}
