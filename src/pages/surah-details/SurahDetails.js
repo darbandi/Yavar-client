@@ -22,7 +22,7 @@ const SurahDetails = (props) => {
   if (loading) return <Loading />;
 
   return (
-    <Layout layoutOption={layoutOption}>
+    // <Layout layoutOption={layoutOption}>
       <div className="surah-details">
         {!isEmpty(surahData) && (
           <SurahDetailsCard
@@ -34,7 +34,7 @@ const SurahDetails = (props) => {
         )}
         <Tiles id={id} />
       </div>
-    </Layout>
+    // </Layout>
   );
 };
 

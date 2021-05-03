@@ -25,12 +25,12 @@ const SurahNewWords = (props) => {
   if (loading) return <Loading />;
 
   return (
-    <Layout layoutOption={layoutOption}>
+    // <Layout layoutOption={layoutOption}>
       <div className="surah-new-words">
         {!isEmpty(data) && <SurahDetailsCard data={surahData} />}
         
       </div>
-    </Layout>
+    // </Layout>
   );
 };
 
