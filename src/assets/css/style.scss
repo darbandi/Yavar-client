@@ -6,6 +6,11 @@
   src: url("./../font/IRANSansWeb(FaNum).ttf");
 }
 
+@font-face {
+  font-family: "arab";
+  src: url("./../font/Al\ Qalam\ Quran.ttf");
+}
+
 body {
   margin: 0;
   font-family: "iransans";
@@ -14,12 +19,13 @@ body {
   direction: rtl;
   background-color: #121212;
   color: #ffeac9;
-  padding: 22px;
+  padding: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  user-select: none;
   a {
     text-decoration: none;
   }
@@ -27,4 +33,13 @@ body {
 #root,
 .app {
   height: 100%;
+}
+a:-webkit-any-link {
+  color: inherit;
+}
+button,
+a {
+  &:focus {
+    outline: none;
+  }
 }

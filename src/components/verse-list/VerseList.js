@@ -1,27 +1,23 @@
-import React, { Profiler } from "react";
-import { profilerCallback } from "./../../Utils";
-import VerseItem from "../verse-item/VerseItem";
-import VerseActions from "../../components/verse-actions/VerseActions";
+import React from "react";
+import VerseItem from "./verse-item/VerseItem";
+import VerseActions from "./verse-item/verse-actions/VerseActions";
 
 const VerseList = (props) => {
   const { data } = props;
-
   return (
-    <Profiler id="Verse" onRender={profilerCallback}>
-      <div className="verce-list">
-        {data?.map((verse, index) => (
-          <div>
-            <VerseActions
-              data={verse.tags}
-              verseId={verse.verse_id}
-              surahId={verse.surah_id}
-              newWords={verse.new_words}
-            />
-            <VerseItem key={index} data={verse} />
-          </div>
-        ))}
-      </div>
-    </Profiler>
+    <div className="verce-list">
+      {data?.map((verse, index) => (
+        <div key={"verce_" + index}>
+          <VerseActions
+            data={verse.tags}
+            verseId={verse.verse_id}
+            surahId={verse.surah_id}
+            newWords={verse.new_words}
+          />
+          <VerseItem data={verse} />
+        </div>
+      ))}
+    </div>
   );
 };
 

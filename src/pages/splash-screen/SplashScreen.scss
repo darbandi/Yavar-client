@@ -1,7 +1,7 @@
 .splash-screen {
   text-align: center;
   height: 812px;
-    color: #ebbd77;
+  color: #ebbd77;
   .header-image {
     background-image: url("./../../assets/img/splash-screen.svg");
     background-position: top;
@@ -19,5 +19,8 @@
     margin-top: 50px;
     margin-bottom: 122px;
     opacity: 50%;
+  }
+  .button {
+    color: #121212;
   }
 }

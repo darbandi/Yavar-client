@@ -1,15 +1,10 @@
 import "./Button.scss";
-import React, { Profiler } from "react";
-import { profilerCallback } from "./../../Utils";
+import React from "react";
 
-const Button = ({title, onClick}) => {
-  return (
-    <Profiler id="SplashScreen" onRender={profilerCallback}>
-      <div className="button" onClick={onClick}>
-        <span>{title}</span>
-      </div>
-    </Profiler>
-  );
-};
+const Button = ({ title, onClick }) => (
+  <div className="button" onClick={onClick}>
+    <span>{title}</span>
+  </div>
+);
 
 export default Button;

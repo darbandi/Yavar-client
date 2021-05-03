@@ -1,10 +1,13 @@
 import "./SurahNewWords.scss";
-import React, { Profiler } from "react";
-import { profilerCallback } from "./../../Utils";
+import React from "react";
 import Layout from "../../components/layout/Layout";
 import SurahDetailsCard from "../../components/surah-details-card/SurahDetailsCard";
 import useVerses from "../../api/useVerses";
 import { isEmpty } from "lodash";
+import Error from "../../components/error/Error";
+import Loading from "../../components/loading/Loading";
+import useSurahNewWords from "../../api/useSurahNewWords";
+import VerseList from "../../components/verse-list/VerseList";
 
 const layoutOption = {
   header: {
@@ -13,22 +16,20 @@ const layoutOption = {
 };
 const SurahNewWords = (props) => {
   const { id } = props.match.params;
-  const [{ surahData, data, loading, error }] = useVerses(id);
+  const [{ surahData, loading, error }] = useVerses(id);
+  const [{ data }] = useSurahNewWords(id);
+
+  console.log("data : ", data);
+
+  if (error) return <Error />;
+  if (loading) return <Loading />;
 
   return (
     <Layout layoutOption={layoutOption}>
-      <Profiler id="SurahNewWords" onRender={profilerCallback}>
-        <div className="surah-new-words">
-          {!isEmpty(surahData) && (
-            <SurahDetailsCard
-              description={`لیست کلمات سوره ${"aa"}`}
-              icon={"icon-list"}
-              title={""}
-              data={surahData}
-            />
-          )}
-        </div>
-      </Profiler>
+      <div className="surah-new-words">
+        {!isEmpty(data) && <SurahDetailsCard data={surahData} />}
+        
+      </div>
     </Layout>
   );
 };

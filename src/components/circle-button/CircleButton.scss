@@ -11,10 +11,17 @@
     border: unset;
     margin-left: 10px;
     margin-right: 10px;
-
+    img {
+      width: 15px;
+      height: 15px;
+    }
     &.active {
       width: 50px;
       height: 50px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }

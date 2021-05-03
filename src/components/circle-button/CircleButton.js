@@ -1,20 +1,30 @@
 import "./CircleButton.scss";
-import React, { Profiler } from "react";
-import { profilerCallback } from "./../../Utils";
-import ghoran from "./../../assets/img/ghoran.svg"
+import React from "react";
+// import quran from "./../../assets/img/quran.svg";
+import quran from "./../../assets/img/ghoran.svg";
+import list from "./../../assets/img/list.svg";
+import bookmark from "./../../assets/img/bookmark.svg";
+import { withRouter } from "react-router";
 
-const CircleButton = () => {
+const CircleButton = ({ history }) => {
   return (
-    <Profiler id="Surah" onRender={profilerCallback}>
-      <div className="circle-button">
-        <button >ss</button>
-        <button className="active">
-            ss
-        </button>
-        <button>ss</button>
-      </div>
-    </Profiler>
+    <div className="circle-button">
+      <button>
+        <img src={list} alt="yavar" />
+      </button>
+      <button
+        className="active"
+        onClick={() => {
+          history.push("/surah");
+        }}
+      >
+        <img src={quran} alt="yavar" />
+      </button>
+      <button>
+        <img src={bookmark} alt="yavar" />
+      </button>
+    </div>
   );
 };
 
-export default CircleButton;
+export default withRouter(CircleButton);

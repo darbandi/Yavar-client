@@ -1,0 +1,35 @@
+.verse-item {
+  &__row {
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  &__arabic {
+    flex: 1;
+    margin-right: 10px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    font-family: arab;
+  }
+
+  &__persian {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 50%;
+    text-align: justify;
+  }
+
+  &__number {
+    background-image: url("./../../../assets/img/star-icon.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 37px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 37px;
+    height: 37px;
+  }
+}

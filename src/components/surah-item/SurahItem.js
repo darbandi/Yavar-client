@@ -1,6 +1,5 @@
 import "./SurahItem.scss";
-import React, { Profiler } from "react";
-import { profilerCallback } from "./../../Utils";
+import React from "react";
 
 const SurahItem = (props) => {
   const {
@@ -14,21 +13,19 @@ const SurahItem = (props) => {
     place_of_descent,
   } = props.data;
   return (
-    <Profiler id="Surah" onRender={profilerCallback}>
-      <div className="surah-item">
-        <div className="name">
-          <div className="title">
-            <a href={`/surah-details/${id}`}>{surah_name}</a>
-          </div>
-          <div className="description">
-            نزول در {place_of_descent} {verse_count} آیه
-          </div>
+    <div className="surah-item">
+      <div className="surah-item__right">
+        <div className="surah-item__title">
+          <a href={`/surah-details/${id}`}>{surah_name}</a>
         </div>
-        <div className="count">
-          <span>{order}</span>
+        <div className="surah-item__description">
+          نزول در {place_of_descent} <span className="surah-item__verse">{verse_count} آیه</span>
         </div>
       </div>
-    </Profiler>
+      <div className={`surah-item__left ${verses_read ? "surah-item--read" : ""}`}>
+        <span>{order}</span>
+      </div>
+    </div>
   );
 };
 

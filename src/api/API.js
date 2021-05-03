@@ -1,6 +1,6 @@
 import axios from "axios";
 import qs from "qs";
-const path = "http://localhost:8000";
+const path = "http://192.168.1.103:8000";
 
 const get = (address, query, customHeader, cancellation) => {
   if (query) {
@@ -33,7 +33,7 @@ const all = (arrMethodes) => {
 };
 
 const headers = (customHeader) => {
-    debugger
+    
   let headers = {
     headers: {
       "Content-Type": "application/json",

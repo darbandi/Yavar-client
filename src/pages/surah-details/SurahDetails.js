@@ -1,11 +1,12 @@
 import "./SurahDetails.scss";
-import React, { Profiler } from "react";
-import { profilerCallback } from "./../../Utils";
-import Tiles from "../../components/Tiles/Tiles";
+import React from "react";
+import Tiles from "../../components/tiles/Tiles";
 import SurahDetailsCard from "../../components/surah-details-card/SurahDetailsCard";
 import { isEmpty } from "lodash";
 import useVerses from "../../api/useVerses";
 import Layout from "../../components/layout/Layout";
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
 
 const SurahDetails = (props) => {
   const { id } = props.match.params;
@@ -17,21 +18,22 @@ const SurahDetails = (props) => {
     },
   };
 
+  if (error) return <Error />;
+  if (loading) return <Loading />;
+
   return (
     <Layout layoutOption={layoutOption}>
-      <Profiler id="SurahDetails" onRender={profilerCallback}>
-        <div className="surah-details">
-          {!isEmpty(surahData) && (
-            <SurahDetailsCard
-              description={`لیست کلمات سوره ${"ff"}`}
-              icon={"icon-list"}
-              title={""}
-              data={surahData}
-            />
-          )}
-          <Tiles id={id} />
-        </div>
-      </Profiler>
+      <div className="surah-details">
+        {!isEmpty(surahData) && (
+          <SurahDetailsCard
+            description={`لیست کلمات سوره ${"ff"}`}
+            icon={"icon-list"}
+            title={""}
+            data={surahData}
+          />
+        )}
+        <Tiles id={id} />
+      </div>
     </Layout>
   );
 };

@@ -28,8 +28,8 @@ const useLessons = () => {
       .then((result) => {
         setData(result);
       })
-      .catch((error) => {
-        setError(error);
+      .catch((err) => {
+        setError(err);
       })
       .finally(() => {
         setLoading(false);
@@ -40,6 +40,6 @@ const useLessons = () => {
     getData();
   }, []);
 
-  return [{ loading, data, error }, getData];
+  return { loading, data, error , getData};
 };
 export default useLessons;

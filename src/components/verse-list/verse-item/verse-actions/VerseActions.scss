@@ -1,7 +1,7 @@
 .verse-actions {
   align-items: center;
   height: 26px;
-  background-color: #707070;
+  background-color: rgba(255, 234, 201, 0.1);
   border-radius: 3px;
   margin-top: 30px;
   display: flex;
@@ -12,7 +12,6 @@
     justify-content: space-between;
     flex: 1;
     align-items: center;
-   
   }
   .left-section {
     width: 128px;

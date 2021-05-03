@@ -1,26 +1,24 @@
 import "./SurahDetailsCard.scss";
-import React, { Profiler } from "react";
-import { profilerCallback } from "./../../Utils";
+import React from "react";
+import quran from "./../../assets/img/ghoran.svg";
 
 const SurahDetailsCard = (props) => {
   const { data } = props;
   const { surah_name, verse_count, place_of_descent } = data || {};
   return (
-    <Profiler id="Surah" onRender={profilerCallback}>
-      <div className="Surah-details-card">
-        <div className="section-1">
-          <div className="surah-name">{surah_name}</div>
-          <div className="verse-count">
-            <span>نزول در {place_of_descent}</span>
-            <span>{verse_count} آیه</span>
-          </div>
-        </div>
-
-        <div className="section-2">
-          <img src={require("./../../assets/img/ghoran.svg")} alt="logo" />
+    <div className="details-card">
+      <div className="details-card__info">
+        <div className="details-card__title">{surah_name}</div>
+        <div>
+          <span>نزول در {place_of_descent}</span>
+          <span className="details-card__description">{verse_count} آیه</span>
         </div>
       </div>
-    </Profiler>
+
+      <div>
+        <img src={quran} alt="logo" />
+      </div>
+    </div>
   );
 };
 

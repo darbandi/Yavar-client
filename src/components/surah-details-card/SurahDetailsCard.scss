@@ -1,20 +1,23 @@
-.Surah-details-card {
+.details-card {
   background: linear-gradient(45deg, #ebbd77, #56462e);
   border-radius: 15px;
   padding: 10px;
   display: flex;
   margin-top: 20px;
   margin-bottom: 10px;
-  .section-1 {
+
+  &__description {
+    margin-right: 10px;
+  }
+
+  &__title {
+    font-family: arab;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+
+  &__info {
     margin-right: 14px;
     flex: 1;
-    .surah-name {
-      font-size: 25px;
-      margin-top: 16px;
-      margin-bottom: 5px;
-    }
-    .verse-count {
-      opacity: 50%;
-    }
   }
 }

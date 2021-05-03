@@ -1,0 +1,70 @@
+.title-ar {
+  font-family: Arabic Typesetting;
+  font-size: 30px;
+  color: #ffeac9;
+  font-weight: bold;
+}
+.title-fa {
+  font-family: "iransans";
+  font-size: 30px;
+  color: #ffeac9;
+}
+.description {
+  font-family: "iransans";
+  color: #ffeac9;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.loading {
+  position: relative;
+  cursor: not-allowed;
+  opacity: 0.5;
+  user-select: none;
+  &:after {
+    position: absolute;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    content: "";
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3498db;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: ui-loading-spin 2s linear infinite; /* Safari */
+    animation: ui-loading-spin 2s linear infinite;
+  }
+}
+
+@keyframes ui-loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes ui-loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes ui-loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes ui-loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
