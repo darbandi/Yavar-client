@@ -1,15 +1,16 @@
 import "./Tile.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Tile = (props) => {
   const { col, title, url, href } = props;
   return (
-    <a href={href} className={["tile", col].join(" ")}>
+    <Link to={href} className={["tile", col].join(" ")}>
       <div>
         <img src={url} alt="logo" />
       </div>
       <div className="tile__title">{title}</div>
-    </a>
+    </Link>
   );
 };
 

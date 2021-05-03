@@ -1,5 +1,6 @@
 import "./SurahItem.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SurahItem = (props) => {
   const {
@@ -16,13 +17,16 @@ const SurahItem = (props) => {
     <div className="surah-item">
       <div className="surah-item__right">
         <div className="surah-item__title">
-          <a href={`/surah-details/${id}`}>{surah_name}</a>
+          <Link to={`/surah-details/${id}`}>{surah_name}</Link>
         </div>
         <div className="surah-item__description">
-          نزول در {place_of_descent} <span className="surah-item__verse">{verse_count} آیه</span>
+          نزول در {place_of_descent}{" "}
+          <span className="surah-item__verse">{verse_count} آیه</span>
         </div>
       </div>
-      <div className={`surah-item__left ${verses_read ? "surah-item--read" : ""}`}>
+      <div
+        className={`surah-item__left ${verses_read ? "surah-item--read" : ""}`}
+      >
         <span>{order}</span>
       </div>
     </div>
