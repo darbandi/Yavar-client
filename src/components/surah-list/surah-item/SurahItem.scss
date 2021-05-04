@@ -30,7 +30,7 @@
     height: 37px;
   }
   &__title {
-    font-family: arab ;
+    font-family: arab;
     font-weight: lighter;
     font-size: 30px;
     color: #ffeac9;
@@ -41,11 +41,16 @@
     font-size: 14px;
     opacity: 0.5;
   }
-  &__verse{
-      margin-right: 20px;
+  &__verse {
+    margin-right: 20px;
   }
   &--read {
     background-image: url("./../../../assets/img/star-fill.svg");
     color: #56462e;
+  }
+  &__reading {
+    font-size: 8px;
+    margin-top: 30px;
+    margin-left: 10px;
   }
 }

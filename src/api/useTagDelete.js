@@ -27,10 +27,7 @@ const useTagDelete = (data) => {
     post("/tags", params)
       .then((result) => result.data.data.deleteTag)
       .then((result) => {
-
-        
-        // data = data.filter((x) => x.id !== result.id);
-        data.splice((x) => x.id !== result.id);
+        data.splice((x) => x.id === result.id, 1);
       })
       .catch((error) => {
         setError(error);

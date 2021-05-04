@@ -32,5 +32,9 @@
     font-size: 12px;
     line-height: 37px;
     height: 37px;
+    &--is-read {
+      background-image: url("./../../../assets/img/star-fill.svg");
+      color: #56462e;
+    }
   }
 }

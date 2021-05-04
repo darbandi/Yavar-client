@@ -9,7 +9,13 @@ import Error from "../../components/error/Error";
 
 const SurahDetails = (props) => {
   const { id } = props.match.params;
-  const { surahData, data, loading, error } = useVerses(id);
+  const { surahData, loading, error } = useVerses(`query{
+    lesson(id:"${id}"){
+     surah_name
+     verse_count
+     place_of_descent
+   }
+ }`);
 
   if (error) return <Error />;
   if (loading) return <Loading />;

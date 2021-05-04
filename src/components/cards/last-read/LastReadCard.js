@@ -1,9 +1,25 @@
 import "./LastReadCard.scss";
-import React from "react";
+import React, { useEffect } from "react";
+import useLastReads from "../../../api/useLastReads";
+import Loading from "../../loading/Loading";
+import Error from "../../error/Error";
+import { withRouter } from "react-router";
 
-const LastReadCard = () => {
+const LastReadCard = ({ history }) => {
+  const { data, error, loading, getLastReads } = useLastReads();
+
+  useEffect(() => {
+    getLastReads();
+  }, []);
+
+  if (error) return <Error />;
+  if (loading) return <Loading />;
+
   return (
-    <div className="last-read">
+    <div
+      className="last-read"
+      onClick={() => history.push(`/verses/${data?.verse?.lesson?.id}#item-${data?.verse?.verse_id}`)}
+    >
       <div className="last-read__title">
         <img
           className="last-read__icon"
@@ -14,8 +30,12 @@ const LastReadCard = () => {
       </div>
       <div className="last-read__verse">
         <div className="last-read__verse__right">
-          <div className="last-read__verse__title">الفاتحه</div>
-          <div className="last-read__verse__description"> 7 شماره آیه</div>
+          <div className="last-read__verse__title">
+            {data?.verse?.lesson?.surah_name}
+          </div>
+          <div className="last-read__verse__description">
+            {data?.verse?.text_arabic}
+          </div>
         </div>
 
         <div className="last-read__verse__logo">
@@ -26,4 +46,4 @@ const LastReadCard = () => {
   );
 };
 
-export default LastReadCard;
+export default withRouter(LastReadCard);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import useTagAdd from "../../../../../api/useTagAdd";
 import useTagDelete from "../../../../../api/useTagDelete";
 import useTagEdit from "../../../../../api/useTagEdit";
@@ -7,6 +7,7 @@ import "./TagModal.scss";
 
 const TagModal = (props) => {
   const { data, verseId, surahId } = props;
+  const inputRef = useRef(null);
   const [visible, setVisible] = useState(false);
   const [text, setText] = useState("");
 
@@ -45,7 +46,7 @@ const TagModal = (props) => {
               {data?.map((tag, index) => (
                 <div key={"tag_" + tag.id}>
                   <span>
-                    {index + 1} :{tag?.text}
+                    <span className="number">{index + 1} : </span> {tag?.text}
                   </span>
                   <span className="actions">
                     <i
@@ -62,15 +63,21 @@ const TagModal = (props) => {
             </div>
             <div className="modal-footer">
               <input
+                ref={inputRef}
                 type="text"
                 className="input-text"
                 value={text}
+                placeholder="درباره این آیه بنویسید ..."
                 onChange={(e) => setText(e.target.value)}
               />
               <span className="send">
                 <i
                   className="icon icon-paper-plane"
-                  onClick={() => addTag(surahId, verseId, text)}
+                  onClick={() => {
+                    addTag(surahId, verseId, text);
+                    setText("");
+                    inputRef.current.focus();
+                  }}
                 ></i>
               </span>
             </div>

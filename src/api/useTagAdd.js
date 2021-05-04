@@ -6,6 +6,7 @@ const useTagAdd = (data) => {
   const [error, setError] = useState();
 
   const addTag = (surahId, verseId, text) => {
+    if (!text) return;
     setLoading(true);
     setError(null);
     const params = {

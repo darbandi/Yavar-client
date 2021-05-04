@@ -13,23 +13,29 @@ const SurahItem = (props) => {
     sequence_of_descent,
     place_of_descent,
   } = props.data;
+
   return (
-    <div className="surah-item">
-      <div className="surah-item__right">
-        <div className="surah-item__title">
-          <Link to={`/surah-details/${id}`}>{surah_name}</Link>
+    <Link to={`/surah-details/${id}`}>
+      <div className="surah-item">
+        <div className="surah-item__right">
+          <div className="surah-item__title">{surah_name}</div>
+          <div className="surah-item__description">
+            نزول در {place_of_descent}{" "}
+            <span className="surah-item__verse">{verse_count} آیه</span>
+          </div>
         </div>
-        <div className="surah-item__description">
-          نزول در {place_of_descent}{" "}
-          <span className="surah-item__verse">{verse_count} آیه</span>
+        {verses_read > 0 && verses_read !== verse_count && (
+          <span className="surah-item__reading">در حال قرائت</span>
+        )}
+        <div
+          className={`surah-item__left ${
+            verses_read ? "surah-item--read" : ""
+          }`}
+        >
+          <span>{order}</span>
         </div>
       </div>
-      <div
-        className={`surah-item__left ${verses_read ? "surah-item--read" : ""}`}
-      >
-        <span>{order}</span>
-      </div>
-    </div>
+    </Link>
   );
 };
 

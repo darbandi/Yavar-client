@@ -30,4 +30,40 @@
   &__image {
     height: 80%;
   }
+  &.verses {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    &:after {
+      background-image: url("./../../../assets/img/ghoran.svg");
+      background-size: 260px;
+      content: "";
+      top: 40px;
+      right: -30px;
+      position: absolute;
+      z-index: 1;
+      width: 260px;
+      height: 260px;
+      background-repeat: no-repeat;
+      opacity: 0.1;
+    }
+
+    .details-card__info,
+    .details-card__logo {
+      flex: 1;
+      width: 100%;
+      display: block;
+    }
+    .details-card__logo {
+      margin-top: 20px;
+    }
+    .details-card__info {
+      border-bottom: 1px solid rgba(255, 234, 201, 0.5);
+      padding-bottom: 10px;
+      margin: 0;
+    }
+  }
 }

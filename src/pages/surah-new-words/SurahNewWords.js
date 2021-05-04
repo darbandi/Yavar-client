@@ -5,13 +5,21 @@ import useVerses from "../../api/useVerses";
 import { isEmpty } from "lodash";
 import Error from "../../components/error/Error";
 import Loading from "../../components/loading/Loading";
-import useSurahNewWords from "../../api/useSurahNewWords";
 import VerseNewWords from "../../components/verse-list/new-words/VerseNewWords";
 
 const SurahNewWords = (props) => {
   const { id } = props.match.params;
-  const { surahData, loading, error } = useVerses(id);
-  const { data } = useSurahNewWords(id);
+  const { surahData, data, loading, error } = useVerses(`query{
+    lesson(id:"${id}"){
+     surah_name
+     verse_count
+     place_of_descent
+     verses(page: 1, count: 300){
+       new_words
+       verse_words_count
+     }
+   }
+ }`);
 
   if (error) return <Error />;
   if (loading) return <Loading />;
