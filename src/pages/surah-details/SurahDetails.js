@@ -17,6 +17,7 @@ const SurahDetails = (props) => {
    }
  }`);
 
+  if (!surahData) return null;
   if (error) return <Error />;
   if (loading) return <Loading />;
 

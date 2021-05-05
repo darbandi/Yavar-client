@@ -3,10 +3,11 @@ import useTagAdd from "../../../../../api/useTagAdd";
 import useTagDelete from "../../../../../api/useTagDelete";
 import useTagEdit from "../../../../../api/useTagEdit";
 import bookmark from "./../../../../../assets/img/verse-actions/bookmark.svg";
+import bookmarkFill from "./../../../../../assets/img/verse-actions/bookmarkFill.svg";
 import "./TagModal.scss";
 
 const TagModal = (props) => {
-  const { data, verseId, surahId } = props;
+  const { data, verseId, surahId, surahName } = props;
   const inputRef = useRef(null);
   const [visible, setVisible] = useState(false);
   const [text, setText] = useState("");
@@ -23,7 +24,7 @@ const TagModal = (props) => {
   return (
     <span className="tag-modal">
       <img
-        src={bookmark}
+        src={data?.length > 0 ? bookmarkFill : bookmark}
         alt="logo"
         onClick={() => setVisible(true)}
         className="tag-btn"
@@ -36,7 +37,9 @@ const TagModal = (props) => {
               {/* <span onClick={() => setVisible(false)} className="close">
                   &times;
                 </span> */}
-              <span>درج تگ بر روی محتوا</span>
+              <span>
+                درج تگ بر روی آیه {verseId} سوره {surahName}
+              </span>
               <i
                 className="icon icon-cancel"
                 onClick={() => setVisible(false)}
@@ -44,15 +47,15 @@ const TagModal = (props) => {
             </div>
             <div className="modal-body">
               {data?.map((tag, index) => (
-                <div key={"tag_" + tag.id}>
+                <div key={"tag_" + tag.id} className="row">
                   <span>
                     <span className="number">{index + 1} : </span> {tag?.text}
                   </span>
                   <span className="actions">
-                    <i
+                    {/* <i
                       className="icon icon-edit"
                       onClick={() => editTag(tag?.id)}
-                    ></i>
+                    ></i> */}
                     <i
                       className="icon icon-trash"
                       onClick={() => deleteTag(tag?.id)}
@@ -60,6 +63,7 @@ const TagModal = (props) => {
                   </span>
                 </div>
               ))}
+              {data.length <= 0 && <span>تا کنون هیچ تگی اضافه نشده است</span>}
             </div>
             <div className="modal-footer">
               <input

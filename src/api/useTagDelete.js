@@ -4,6 +4,7 @@ import { post } from "./API";
 const useTagDelete = (data) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+  const [, setData] = useState();
 
   const deleteTag = (id) => {
     setLoading(true);
@@ -27,7 +28,9 @@ const useTagDelete = (data) => {
     post("/tags", params)
       .then((result) => result.data.data.deleteTag)
       .then((result) => {
-        data.splice((x) => x.id === result.id, 1);
+        const index = data.findIndex((x) => x.id === result.id);
+        data.splice(index, 1);
+        setData();
       })
       .catch((error) => {
         setError(error);

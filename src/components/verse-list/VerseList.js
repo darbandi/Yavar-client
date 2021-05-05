@@ -4,8 +4,8 @@ import VerseActions from "./verse-item/verse-actions/VerseActions";
 import { withRouter } from "react-router";
 
 const VerseList = (props) => {
-  const { data, location } = props;
-  
+  const { data, location, surahName } = props;
+
   useEffect(() => {
     if (data.length > 0 && location.hash) {
       var elmnt = document.getElementById(location?.hash?.replace("#", ""));
@@ -22,6 +22,7 @@ const VerseList = (props) => {
             verseId={verse?.verse_id}
             surahId={verse?.surah_id}
             newWords={verse?.new_words}
+            surahName={surahName}
           />
           <VerseItem data={verse} />
         </div>

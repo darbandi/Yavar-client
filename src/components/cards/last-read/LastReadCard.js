@@ -7,18 +7,31 @@ import { withRouter } from "react-router";
 
 const LastReadCard = ({ history }) => {
   const { data, error, loading, getLastReads } = useLastReads();
+  const { lesson, verse_id, text_arabic } = data?.verse || {};
 
   useEffect(() => {
-    getLastReads();
+    getLastReads(`query{
+        lastRead{
+            verse{
+                text_arabic
+                verse_id
+                lesson{
+                    id
+                    surah_name
+                }
+            }
+        }
+    }`);
   }, []);
 
+  if (!lesson) return null;
   if (error) return <Error />;
   if (loading) return <Loading />;
 
   return (
     <div
       className="last-read"
-      onClick={() => history.push(`/verses/${data?.verse?.lesson?.id}#item-${data?.verse?.verse_id}`)}
+      onClick={() => history.push(`/verses/${lesson?.id}#item-${verse_id}`)}
     >
       <div className="last-read__title">
         <img
@@ -30,12 +43,8 @@ const LastReadCard = ({ history }) => {
       </div>
       <div className="last-read__verse">
         <div className="last-read__verse__right">
-          <div className="last-read__verse__title">
-            {data?.verse?.lesson?.surah_name}
-          </div>
-          <div className="last-read__verse__description">
-            {data?.verse?.text_arabic}
-          </div>
+          <div className="last-read__verse__title">{lesson?.surah_name}</div>
+          <div className="last-read__verse__description">{text_arabic}</div>
         </div>
 
         <div className="last-read__verse__logo">

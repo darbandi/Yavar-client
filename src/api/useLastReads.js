@@ -61,51 +61,19 @@ const useLastReads = () => {
       });
   };
 
-  const getLastReads = () => {
+  const getLastReads = (query) => {
     setLoading(true);
     setError(null);
     const params = {
-      query: `query{
-                lastRead{
-                    id
-                    surah_id
-                    verse_id
-                    created_at
-                    is_delete
-                    user_id
-                    user{
-                        id
-                        email
-                    }
-                    verse{
-                        id
-                        text_arabic
-                        text_persian
-                        verse_id
-                        surah_id
-                        new_words
-                        component
-                        verse_words_count
-                        lesson{
-                            id
-                            surah_id
-                            order
-                            surah_name
-                            verse_count
-                            sequence_of_descent
-                            place_of_descent
-                        }
-                    }
-                }
-            }`,
+      query,
     };
     post("/LastReads", params)
       .then((result) => result.data.data.lastRead)
       .then((result) => {
         setData(result);
       })
-      .catch((error) => {
-        setError(error);
+      .catch((err) => {
+        setError(err);
       })
       .finally(() => {
         setLoading(false);
