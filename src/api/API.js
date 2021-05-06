@@ -42,7 +42,7 @@ const headers = (customHeader) => {
 
   // const token = userInfo("token");
   const token =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQ3ZmQxMDE0NWVlYjYzYjAxZmVhZDgiLCJlbWFpbCI6ImRhcmJhbmRpQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEyJEdjSUEwWFNyR3Jwb081eXFOTDMvUy45UkZFUFVYR3V6Mm01Tk5zMjlkTFBvNHRzUDV4MEFlIiwiY3JlYXRlZF9hdCI6IjIwMjAtMDgtMjdUMTg6MzY6MDAuMDA2WiIsIl9fdiI6MCwiaWF0IjoxNjE5ODkzMDM0LCJleHAiOjE2MjAyNTMwMzR9.RhPAt2e84pISxSJTV3cnOSwkYm9Vj63jH2HSWyossQg";
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQ3ZmQxMDE0NWVlYjYzYjAxZmVhZDgiLCJlbWFpbCI6ImRhcmJhbmRpQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEyJEdjSUEwWFNyR3Jwb081eXFOTDMvUy45UkZFUFVYR3V6Mm01Tk5zMjlkTFBvNHRzUDV4MEFlIiwiY3JlYXRlZF9hdCI6IjIwMjAtMDgtMjdUMTg6MzY6MDAuMDA2WiIsIl9fdiI6MCwiaWF0IjoxNjIwMjUzMTgzLCJleHAiOjE2MjA2MTMxODN9.wcU3Lra1GEu2pgMI9ExRwbcjhbxsgt-aC2Yy9mh0DLE";
 
   if (token) {
     headers.headers["Authorization"] = token;

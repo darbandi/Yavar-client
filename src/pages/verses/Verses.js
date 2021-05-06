@@ -22,6 +22,9 @@ const Verses = (props) => {
         is_read{
             id
         }
+        is_favorite{
+            id
+        }
         tags(page: 1, count: 300){
             id
             text

@@ -6,6 +6,7 @@ const SplashScreen = lazy(() => import("./pages/splash-screen/SplashScreen"));
 const Surah = lazy(() => import("./pages/surah/Surah"));
 const SurahDetails = lazy(() => import("./pages/surah-details/SurahDetails"));
 const Verses = lazy(() => import("./pages/verses/Verses"));
+const Favorites = lazy(() => import("./pages/favorites/Favorites"));
 const SurahNewWords = lazy(() =>
   import("./pages/surah-new-words/SurahNewWords")
 );
@@ -18,6 +19,7 @@ const CustomRouter = () => (
     <Route path="/surah-details/:id" component={SurahDetails} />
     <Route path="/verses/:id" component={Verses} />
     <Route path="/surah-new-words/:id" component={SurahNewWords} />
+    <Route path="/favorites" component={Favorites} />
   </Suspense>
 );
 

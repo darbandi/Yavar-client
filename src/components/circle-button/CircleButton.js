@@ -2,15 +2,19 @@ import "./CircleButton.scss";
 import React from "react";
 // import quran from "./../../assets/img/quran.svg";
 import quran from "./../../assets/img/ghoran.svg";
-import list from "./../../assets/img/list.svg";
+import favoriteDark from "./../../assets/img/favoritesDark.svg";
 import bookmark from "./../../assets/img/bookmark.svg";
 import { withRouter } from "react-router";
 
 const CircleButton = ({ history }) => {
   return (
     <div className="circle-button">
-      <button>
-        <img src={list} alt="yavar" />
+      <button
+        onClick={() => {
+          history.push("/favorites");
+        }}
+      >
+        <img src={favoriteDark} alt="yavar" />
       </button>
       <button
         className="active"
@@ -20,7 +24,11 @@ const CircleButton = ({ history }) => {
       >
         <img src={quran} alt="yavar" />
       </button>
-      <button>
+      <button
+        onClick={() => {
+          history.push("/tags");
+        }}
+      >
         <img src={bookmark} alt="yavar" />
       </button>
     </div>

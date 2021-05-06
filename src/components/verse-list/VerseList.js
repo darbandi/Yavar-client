@@ -18,7 +18,7 @@ const VerseList = (props) => {
       {data?.map((verse, index) => (
         <div key={"verse_" + index} id={`item-${verse?.verse_id}`}>
           <VerseActions
-            data={verse?.tags}
+            data={verse}
             verseId={verse?.verse_id}
             surahId={verse?.surah_id}
             newWords={verse?.new_words}
